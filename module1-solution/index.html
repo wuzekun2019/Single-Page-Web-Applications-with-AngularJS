@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        .empty {
+            border: 1px solid red;
+            color: red;
+        }
+
+        .no_empty {
+            border: 1px solid green;
+            color: green;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body ng-app="LunchCheck">
+    <div ng-controller="LunchCheckController">
+        <div>
+            <input ng-model="lunch" type="text">
+        </div>
+        <button class="btn btn-default" ng-click="checkiftoomuch()">Check If Too Much</button>
+        <div>
+            <span ng-if = "empty"  class="empty">{{checkresult}}</span>
+            <span ng-if = "!empty"  class="no_empty">{{checkresult}}</span>
+        </div>
+    </div>
+</body>
+</html>
